@@ -4,3 +4,4 @@ lxml==4.9.2
 html5lib==1.1
 fastapi==0.89.1
 apscheduler==3.9.1.post1
+uvicorn==0.20.0
