@@ -131,7 +131,7 @@ async def find():
     for k, v in data.items():
         if isinstance(v, dict):
             sorted_items = sorted(v.items(), key=lambda x: x[1], reverse=1)
-            data[k] = dict(sorted_items[:])
+            data[k] = dict(sorted_items[:101])
 
 
     with open("data.json", "w", encoding="utf8") as f:
