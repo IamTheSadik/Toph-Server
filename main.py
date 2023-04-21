@@ -17,7 +17,7 @@ app = FastAPI(
 
 
 class Leaderboard:
-    with open("final.json", "rb") as f:
+    with open("data.json", "rb") as f:
         data: dict = json.load(f)
 
 
@@ -32,7 +32,7 @@ async def fx():
 
 
 async def cacheOnStart():
-    with open("final.json", "rb") as f:
+    with open("data.json", "rb") as f:
         Leaderboard.data = json.load(f)
     
     print(f"Cached Data at {datetime.now()}")
