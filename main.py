@@ -69,7 +69,8 @@ async def custom_404_handler(*_):
 
 
 
-def getTopOnes(data: dict, limit: int):
+def getTopOnes(limit: int):
+    data = Leaderboard.data
     a = {i: dict(tuple(data[i].items())[:limit]) for i in data}
     return a
 
@@ -80,6 +81,7 @@ async def getData(limit: int):
     data = {
         "ok": True,
         "limit":limit,
+        "data":getTopOnes(limit)
     }
 
     return Response(
