@@ -89,7 +89,7 @@ async def custom_404_handler(*_):
 
 
 def getTopOnes(limit: int):
-    data = Leaderboard.data
+    data = Leaderboard.data.copy()
     for k, v in data.items():
         if isinstance(v, dict):
             sorted_items = sorted(v.items(), key=lambda x: x[1], reverse=1)
