@@ -96,6 +96,7 @@ def getTopOnes(limit: int):
 
 # Platform Names
 @app.post("/getData")
+@app.get("/getData")
 async def getData(limit: int):
     data = {
         "ok": True,
