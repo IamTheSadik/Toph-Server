@@ -1,5 +1,6 @@
 import os
 import json
+import time
 if os.cpu_count() != 8:
     # os.system("pip install bs4 httpx lxml flask")
     import threading
@@ -29,16 +30,19 @@ def find_probs(r):
 
 
 # kkk = {"count": 0}
+class Toph:
+    unsolved = set()
+
+
 def find_top(r: httpx.Response):
     doc = BeautifulSoup(r.content, "lxml")
     b = doc.findAll("div", class_="panel__body")[-1].findAll("div")[1:]
     c = [i.span.text for i in b]
     if len(c) != 5:
-        pass
+        Toph.unsolved.add(str(r.url))
+        print(c)
 
     solution, earliest, fastest, lightest, shortest = c
-    # if "Nusab19" in c:
-    #     kkk["count"] += 1
 
     return c
 
@@ -52,16 +56,19 @@ async def get_problem_urls():
     url = "http://toph.co/problems/all"
     print("Starting...")
 
-    a = [req(url + f"?start={i*25}&sort=title", ses) for i in range(1, 77)]
-
     times = 1
     while times:
         try:
+            a = [req(url + f"?start={i*25}&sort=title", ses) for i in range(1, 77)]
             a = await asyncio.gather(*a)
             print("Done getting problems")
             break
 
         except Exception as e:
+            if times>3:
+                a =  []
+                break
+
             print("Trying for", times, e, end="\r")
             times += 1
 
@@ -71,15 +78,21 @@ async def get_problem_urls():
         b += x
     b = ["http://toph.co" + i for i in b]
 
-    with open("problems.txt", "w") as d:
-        d.write('\n'.join(b))
-
+    if b:
+        with open("problems.txt", "w") as d:
+            d.write('\n'.join(b))
+    else:
+        with open("problems.txt", "rb") as f:
+            b = json.load(f)
+    
     return b
 
 
 async def find():
     a = await get_problem_urls()
     print(" Got", len(a), "problems")
+    print(" Got", len(set(a)), "unique problems")
+
     print("Done getting result.")
     print("Extracting urls")
     a = sorted(set(a))
@@ -136,9 +149,14 @@ async def find():
 
     with open("data.json", "w", encoding="utf8") as f:
         json.dump(final, f, ensure_ascii=False)
+    with open("unsolved.json", "w", encoding="utf8") as f:
+        json.dump(list(Toph.unsolved), f, ensure_ascii=False)
+    
     print("Done")
     for i in final:
         print(i, len(final[i]))
+    
+    
 
 
 async def main():
@@ -147,5 +165,8 @@ async def main():
             await find()
         except Exception as e:
             print(e)
+        finally:
+            print("SLeeping...")
+            await asyncio.sleep(7*60)
 
 asyncio.run(main())

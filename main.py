@@ -5,7 +5,6 @@ from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware
 
 
-
 import json
 import time
 import httpx
@@ -35,9 +34,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class Leaderboard:
     with open("data.json", "rb") as f:
         data: dict = json.load(f)
+    with open("unsolved.json", "rb") as f:
+        unsolved = json.load(f)
 
 
 scheduler = AsyncIOScheduler()
@@ -53,7 +55,7 @@ async def fx():
 async def cacheOnStart():
     with open("data.json", "rb") as f:
         Leaderboard.data = json.load(f)
-    
+
     print(f"Cached Data at {datetime.now()}")
 
 
@@ -87,7 +89,6 @@ async def custom_404_handler(*_):
     return JSONResponse(status_code=404, content=say)
 
 
-
 def getTopOnes(limit: int):
     data = Leaderboard.data.copy()
     for k, v in data.items():
@@ -97,14 +98,38 @@ def getTopOnes(limit: int):
     return data
 
 
+def getUnsolved():
+    data = Leaderboard.unsolved.copy()
+    return sorted(data)
+
+
 # Platform Names
 @app.post("/getData")
 @app.get("/getData")
 async def getData(limit: int):
     data = {
         "ok": True,
-        "limit":limit,
-        "data":getTopOnes(limit)
+        "limit": limit,
+        "data": getTopOnes(limit)
+    }
+
+    return Response(
+        content=json.dumps(
+            data,
+            indent=4,
+            default=str),
+        media_type='application/json')
+
+# Platform Names
+
+
+@app.post("/unsolved")
+@app.get("/unsolved")
+async def unsolved():
+    data = {
+        "ok": True,
+        "data": getUnsolved()
+
     }
 
     return Response(
@@ -146,6 +171,7 @@ async def add_process_time_header(request, func):
 
 def hello():
     import fetch
+
 
 if __name__ == "__main__":
     multiprocessing.Process(target=hello).start()
