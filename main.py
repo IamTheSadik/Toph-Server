@@ -40,6 +40,8 @@ class Leaderboard:
         data: dict = json.load(f)
     with open("unsolved.json", "rb") as f:
         unsolved = json.load(f)
+    with open("easy_problems.json", "rb") as f:
+        easyProblems = json.load(f)
 
 
 scheduler = AsyncIOScheduler()
@@ -56,7 +58,22 @@ async def cacheOnStart():
     with open("data.json", "rb") as f:
         Leaderboard.data = json.load(f)
 
+    with open("unsolved.json", "rb") as f:
+        Leaderboard.unsolved = json.load(f)
+
+    with open("easy_problems.json", "rb") as f:
+        Leaderboard.easyProblems = json.load(f)
+
     print(f"Cached Data at {datetime.now()}")
+
+
+def beautify(data):
+    return Response(
+        content=json.dumps(
+            data,
+            indent=4,
+            default=str),
+        media_type='application/json')
 
 
 # Index | root
@@ -74,12 +91,7 @@ Made using FastAPI with python3
 """.strip()
 
     data = {"ok": True, "message": welcomeMessage}
-    return Response(
-        content=json.dumps(
-            data,
-            indent=4,
-            default=str),
-        media_type='application/json')
+    return beautify(data)
 
 
 # 404 Exception
@@ -113,12 +125,7 @@ async def getData(limit: int):
         "data": getTopOnes(limit)
     }
 
-    return Response(
-        content=json.dumps(
-            data,
-            indent=4,
-            default=str),
-        media_type='application/json')
+    return beautify(data)
 
 # Platform Names
 
@@ -132,12 +139,18 @@ async def unsolved():
 
     }
 
-    return Response(
-        content=json.dumps(
-            data,
-            indent=4,
-            default=str),
-        media_type='application/json')
+    return beautify(data)
+
+
+@app.post("/easyProblems")
+@app.get("/easyProblems")
+async def easyProblems():
+    data = {
+        "ok": True,
+        "data": Leaderboard.easyProblems.copy()
+    }
+
+    return beautify(data)
 
 
 _tempData = {"count": 0, "startTime": time.time()}
@@ -151,12 +164,7 @@ async def api_status():
         "uptime": f"{uptime:.2f} hours.",
         "requestsCount": reqCount
     }
-    return Response(
-        content=json.dumps(
-            data,
-            indent=4,
-            default=str),
-        media_type='application/json')
+    return beautify(data)
 
 
 @app.middleware("http")
