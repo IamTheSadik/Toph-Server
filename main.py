@@ -149,9 +149,9 @@ async def easyProblems():
 @app.get("/user")
 async def unsolved(name: str):
   a = {}
-  a["fastest"] = Leaderboard.fastest.get(name, {})
-  a["lightest"] = Leaderboard.lightest.get(name, {})
-  a["shortest"] = Leaderboard.shortest.get(name, {})
+  a["fastest"] = Leaderboard.fastest.get(name, [])
+  a["lightest"] = Leaderboard.lightest.get(name, [])
+  a["shortest"] = Leaderboard.shortest.get(name, [])
 
   data = {"ok": True, "data": a}
 
