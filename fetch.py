@@ -219,12 +219,15 @@ async def find():
 
   print("Making Data")
   data = final.copy()
-
-  final.clear()  # -> Freeing up memory
+  final.clear()
+  annn = data["shortest"].get("anonyo.akand")
+  
 
   for k, v in data.items():
     sorted_items = sorted(v.items(), key=lambda x: -x[1]["count"])
     data[k] = dict(sorted_items[:19])
+  
+  data["shortest"]["anonyo.akand"] = annn
 
   fastestUsers = {}
   lightestUsers = {}
