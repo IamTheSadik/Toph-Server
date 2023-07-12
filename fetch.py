@@ -290,8 +290,8 @@ async def main():
       print(e)
     finally:
       print("Sleeping...")
-      #await asyncio.sleep(7 * 60)
-      await selfCall(7 * 60)
+      await asyncio.sleep(7 * 60)
+      #await selfCall(7 * 60)
 
 
 asyncio.run(main())

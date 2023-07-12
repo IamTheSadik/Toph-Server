@@ -57,11 +57,6 @@ class Leaderboard:
 
 
 async def cacheOnStart():
-  ses = httpx.Client(timeout=30, follow_redirects=1)
-  url = "https://toph-api.onrender.com/status"
-  _ = ses.get(url)
-  print("Self Check:", _.status_code)
-  
   with open("Data/allProblems.json", "rb") as f:
     Leaderboard.allProblems = json.load(f)
   with open("Data/unsolved.json", "rb") as f:
@@ -78,9 +73,6 @@ async def cacheOnStart():
 
   print(f"Cached Data at {datetime.now()}")
   
-  _ = ses.get(url)
-  print("Self Check:", _.status_code)
-
 
 
 def beautify(data):
@@ -215,6 +207,14 @@ async def add_process_time_header(request, func):
 
 def hello():
   import fetch
+
+
+
+def importKeepAlive():
+    import keepalive
+
+
+multiprocessing.Process(target=importKeepAlive).start()
 
 
 if __name__ == "__main__":
