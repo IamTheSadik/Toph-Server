@@ -267,6 +267,21 @@ async def find():
   print("Done sorted problems")
 
 
+
+async def selfCall(sec):
+    url = "https://toph-api.onrender.com/status"
+    for i in range(int(sec/1.5)):
+        _ = ses.get(url)
+        print("Self Check:",i , _.status_code, end="\r")
+        await asyncio.sleep(i)
+    
+    print()
+  
+    
+
+
+
+
 async def main():
   while 1:
     try:
@@ -275,7 +290,8 @@ async def main():
       print(e)
     finally:
       print("Sleeping...")
-      await asyncio.sleep(7 * 60)
+      #await asyncio.sleep(7 * 60)
+      await selfCall(7 * 60)
 
 
 asyncio.run(main())
