@@ -95,7 +95,13 @@ async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
                 count = d["count"]
                 leaderboardData[i][u] = count
 
+    allUsers = {
+        "fastest": fastestUsers,
+        "lightest": lightestUsers,
+        "shortest": shortestUsers,
+    }
     dumpData(leaderboardData, "Data/leaderboard.json")
+    dumpData(allUsers, "Data/users/all.json")
     dumpData(fastestUsers, "Data/users/fastest.json")
     dumpData(lightestUsers, "Data/users/lightest.json")
     dumpData(shortestUsers, "Data/users/shortest.json")
