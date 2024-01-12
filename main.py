@@ -13,8 +13,10 @@ headers = {
 }
 
 
-if not os.path.exists("Data"):
-    os.mkdir("Data")
+directory = "Data/users"
+
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 async def req(url, ses):
     r = await ses.get(url)
