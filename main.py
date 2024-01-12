@@ -14,7 +14,7 @@ headers = {
 
 
 if not os.path.exists("Data"):
-    os.mkdirs("Data")
+    os.mkdir("Data")
 
 async def req(url, ses):
     r = await ses.get(url)
