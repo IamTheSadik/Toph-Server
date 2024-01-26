@@ -22,6 +22,8 @@ async def main():
         timeout=100, headers=headers, follow_redirects=1)
 
     await fetchLeaderboard(req, ses)
+    import getProfilePictures
+    import compressProfilePictures
 
 
 if __name__ == "__main__":
