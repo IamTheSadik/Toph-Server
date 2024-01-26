@@ -56,3 +56,5 @@ for i, user in enumerate(sorted(usernames), 1):
 
     with open(f"Data/profilePictures/{user}.jpg", "wb") as f:
         f.write(ses.get(img).content)
+
+import compressProfilePictures

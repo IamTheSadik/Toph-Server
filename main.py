@@ -29,7 +29,6 @@ async def main():
 
     await fetchLeaderboard(req, ses)
     import getProfilePictures
-    import compressProfilePictures
 
 
 if __name__ == "__main__":
