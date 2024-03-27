@@ -47,6 +47,8 @@ http://toph.co/p/angle-of-polygon
 http://toph.co/p/angles
 http://toph.co/p/angry-mamu
 http://toph.co/p/angry-talha
+http://toph.co/p/anina-s-birthday-gift
+http://toph.co/p/anina-s-christmas-tree
 http://toph.co/p/an-interesting-game
 http://toph.co/p/anita-s-experiment
 http://toph.co/p/ankara-messi
@@ -250,6 +252,7 @@ http://toph.co/p/candidate-consonant
 http://toph.co/p/candy-boxes
 http://toph.co/p/can-iutpc-resist-the-coders
 http://toph.co/p/can-peter-iii-save-mj-this-time
+http://toph.co/p/can-you-help
 http://toph.co/p/can-you-make-it-close
 http://toph.co/p/captain-shoaib-civil-war
 http://toph.co/p/cardboard-mountains
@@ -450,6 +453,7 @@ http://toph.co/p/don-t-show-power
 http://toph.co/p/don-t-stair-at-me
 http://toph.co/p/doom-of-mosquitoes
 http://toph.co/p/dot-hunter
+http://toph.co/p/do-you-have-arithmophobia
 http://toph.co/p/do-you-know-lis
 http://toph.co/p/do-you-know-tree
 http://toph.co/p/dracarys
@@ -507,6 +511,7 @@ http://toph.co/p/equation-equals-hazards
 http://toph.co/p/erik-the-candyboy---1
 http://toph.co/p/erik-the-candyboy---2
 http://toph.co/p/escape-plan
+http://toph.co/p/escape-room-the-deadly-puzzle-game
 http://toph.co/p/escape-the-planet-earth
 http://toph.co/p/estimation-of-techboy
 http://toph.co/p/euclidean-tsp
@@ -655,6 +660,7 @@ http://toph.co/p/gold-mines
 http://toph.co/p/good-and-bad-boys
 http://toph.co/p/good-and-evil
 http://toph.co/p/game-on-array
+http://toph.co/p/gopal-s-grand-gambit-tracking-montri-s-treachery
 http://toph.co/p/gorgeous-space-station
 http://toph.co/p/gotta-print-em-all
 http://toph.co/p/gpa-calculator
@@ -1100,6 +1106,7 @@ http://toph.co/p/mushrur-injured-in-singara-blast
 http://toph.co/p/musk-colonizing-mars
 http://toph.co/p/my-small-number
 http://toph.co/p/mysql-for-the-mother-of-dragons
+http://toph.co/p/connected-friends
 http://toph.co/p/mysterious-sum
 http://toph.co/p/mystery-of-fibonacci
 http://toph.co/p/nac-sac-game-easy
@@ -1130,6 +1137,7 @@ http://toph.co/p/nitu-and-her-lucky-string
 http://toph.co/p/nitu-and-pseudo-code
 http://toph.co/p/nitu-the-laziest-girl
 http://toph.co/p/nobita-and-shizuka
+http://toph.co/p/nodes-and-depth
 http://toph.co/p/no-expectations
 http://toph.co/p/no-gcd
 http://toph.co/p/no-lemon-no-melon
@@ -1596,6 +1604,7 @@ http://toph.co/p/the-bachelors-problem
 http://toph.co/p/the-best-gift-ever
 http://toph.co/p/the-boat-filled-with-love
 http://toph.co/p/the-cat-and-mouse-juxtaposition
+http://toph.co/p/the-cipher
 http://toph.co/p/the-clash-of-tactical-titans-klopp-vs-ten-hag
 http://toph.co/p/the-crossover-everybody-asked-for-rise-of-the-thorn-villain-duckducula
 http://toph.co/p/the-depressed-guy
@@ -1763,6 +1772,7 @@ http://toph.co/p/who-is-the-champion
 http://toph.co/p/who-is-the-naag-king
 http://toph.co/p/who-is-the-organizer
 http://toph.co/p/who-will-get-the-job
+http://toph.co/p/who-win-the-game
 http://toph.co/p/why-don-t-you-guys-believe-him
 http://toph.co/p/why-the-long-face
 http://toph.co/p/will-tahmid-rahman-take-the-workshop-of-45-batch
@@ -1796,6 +1806,7 @@ http://toph.co/p/yet-another-xor-problem
 http://toph.co/p/yet-another-xor-problem-2
 http://toph.co/p/yet-another-xor-tree-problem
 http://toph.co/p/abcdefgh
+http://toph.co/p/you-are-programmer-you-have-no-valentine
 http://toph.co/p/stay-home-warm-your-love-for-geometry
 http://toph.co/p/you-should-believe-him-now
 http://toph.co/p/you-want-chocolate
