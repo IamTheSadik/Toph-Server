@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import httpx
+import httpx, time
 
 import json
 import asyncio
@@ -75,7 +75,7 @@ async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClien
     """
 
     totalLen = len(urls)
-    diff = 50
+    diff = 100
     logger.info(f"Making bulk requests to {totalLen} urls")
 
 
@@ -90,6 +90,7 @@ async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClien
         problemResponses += x
         urls = urls[diff:]
         logger.info(f"Fetched {len(problemResponses)}/{totalLen} requests")
+        time.sleep(30)
 
     return problemResponses
 
