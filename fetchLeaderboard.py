@@ -1,7 +1,5 @@
 import httpx
 
-import json
-
 from getProblems import getAllProblemUrls
 from helper import makeBulkRequests, findLeaderboard, dumpData
 from logger import logger

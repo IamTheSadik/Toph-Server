@@ -15,14 +15,13 @@ async def getAllProblemUrls(ses: httpx.AsyncClient):
     Gets all problem urls from toph.co/problems/all
 
     Args:
-        req (Function): httpx.AsyncClient.get
         ses (httpx.AsyncClient): httpx.AsyncClient
 
     Returns:
         list[string]: List of problem urls
     """
 
-    logger.info(f"Getting all problem urls /p/all")
+    logger.info("Getting all problem urls /p/all")
 
     rootUrl = "http://toph.co/problems/all"
     

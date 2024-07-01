@@ -83,7 +83,7 @@ async def makeBulkRequests(urls: list[str], ses: httpx.AsyncClient, diff:int=100
     problemResponses = []
     while urls:
         x = urls[:diff]
-        x = await asyncio.gather(*[ses.get(i, ses) for i in x], return_exceptions=True)
+        x = await asyncio.gather(*[ses.get(i) for i in x], return_exceptions=True)
         if x[0].status_code == 429:
             logger.warning("Rate limited")
             exit(1)
