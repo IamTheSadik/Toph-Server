@@ -8,12 +8,12 @@ from logger import logger
 from customTypes import Function
 
 
-async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
-    allProblems = await getAllProblemUrls(req, ses)
+async def fetchLeaderboard(ses: httpx.AsyncClient):
+    allProblems = await getAllProblemUrls(ses)
     allProblems = sorted(set(allProblems))
     unsolvedProblems = []
 
-    problemResponses = await makeBulkRequests(allProblems, req, ses)
+    problemResponses = await makeBulkRequests(allProblems, ses)
 
     leaderboardData = []
 

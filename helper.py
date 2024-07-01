@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
-import httpx, time
+import httpx
 
+import time
 import json
 import asyncio
-import logging
+import random
 
 from logger import logger
 from customTypes import Function
@@ -61,7 +62,7 @@ def findLeaderboard(r: httpx.Response):
     return c
 
 
-async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClient, diff:int=100):
+async def makeBulkRequests(urls: list[str], ses: httpx.AsyncClient, diff:int=100):
     """
     Makes bulk requests to a list of urls
 
@@ -82,9 +83,9 @@ async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClien
     problemResponses = []
     while urls:
         x = urls[:diff]
-        x = await asyncio.gather(*[req(i, ses) for i in x], return_exceptions=True)
+        x = await asyncio.gather(*[ses.get(i, ses) for i in x], return_exceptions=True)
         if x[0].status_code == 429:
-            logger.warning(f"Rate limited")
+            logger.warning("Rate limited")
             exit(1)
         
         problemResponses += x
@@ -106,3 +107,33 @@ def dumpData(data: dict, path: str):
     logger.info(f"Dumping data to {path}")
     with open(path, "w", encoding="utf8") as f:
         json.dump(data, f, ensure_ascii=False)
+
+
+def generate_random_ip():
+    return ".".join(str(random.randint(0, 255)) for _ in range(4))
+
+
+def getHeader():
+    ip = generate_random_ip()
+    keys = """
+Forwarded-For
+Forwarded-For-IP
+Forwarded-For-Ip
+X-Client-IP
+X-Custom-IP-Authorization
+X-Forward-For
+X-Forwarded
+X-Forwarded-By
+X-Forwarded-For
+X-Forwarded-For-Original
+X-Forwarder-For
+X-Forwared-Host
+X-Host
+X-Originating-IP
+X-Remote-Addr
+X-Remote-Addr
+X-Remote-IP
+""".split()
+    headers = {i:ip for i in keys}
+
+    return headers

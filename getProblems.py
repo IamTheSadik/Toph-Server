@@ -10,7 +10,7 @@ from logger import logger
 from customTypes import Function
 
 
-async def getAllProblemUrls(req: Function, ses: httpx.AsyncClient):
+async def getAllProblemUrls(ses: httpx.AsyncClient):
     """
     Gets all problem urls from toph.co/problems/all
 
@@ -25,10 +25,11 @@ async def getAllProblemUrls(req: Function, ses: httpx.AsyncClient):
     logger.info(f"Getting all problem urls /p/all")
 
     rootUrl = "http://toph.co/problems/all"
+    
+    problemUrls = [rootUrl + f"?start={i*25}&sort=title" for i in range(1, 77)]
+    responses = await makeBulkRequests(problemUrls, ses)
 
-    responses = await makeBulkRequests([rootUrl + f"?start={i*25}&sort=title" for i in range(1, 77)], req, ses)
-
-    logger.info(f"Extracting problem urls from response")
+    logger.info("Extracting problem urls from response")
     allProblems = []
     for resp in responses:
         if isinstance(resp, Exception):

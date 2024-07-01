@@ -18,16 +18,11 @@ directory = "Data/users"
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-async def req(url, ses):
-    r = await ses.get(url)
-    return r
-
-
 async def main():
     ses = httpx.AsyncClient(
         timeout=100, headers=headers, follow_redirects=1)
 
-    await fetchLeaderboard(req, ses)
+    await fetchLeaderboard(ses)
     import getProfilePictures
 
 
