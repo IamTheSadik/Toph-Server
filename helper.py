@@ -76,7 +76,7 @@ async def makeBulkRequests(urls: list[str], ses: httpx.AsyncClient, diff:int=100
     """
 
     totalLen = len(urls)
-    diff = 100
+    diff = 50
     logger.info(f"Making bulk requests to {totalLen} urls")
 
 
