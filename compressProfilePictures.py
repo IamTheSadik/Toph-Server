@@ -46,4 +46,4 @@ for filename in os.listdir(source_dir):
 
         # Close the image
         image.close()
-        print(f"Compressed   @{filename.split('.')[0]}")
+        print(f"Compressed   @{filename.split('.')[0]}", end="\r")

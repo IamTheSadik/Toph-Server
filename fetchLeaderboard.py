@@ -1,11 +1,14 @@
+import os
 import httpx
 
 import json
 
+from logger import getLogger
+from customTypes import Function
 from getProblems import getAllProblemUrls
 from helper import makeBulkRequests, findLeaderboard, dumpData
-from logger import logger
-from customTypes import Function
+
+logger = getLogger(__name__)
 
 
 async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
@@ -19,7 +22,7 @@ async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
 
     for resp in problemResponses:
         if isinstance(resp, Exception):
-            logger.error(f"Error while fetching leaderboard: {resp.url}")
+            logger.error(f"Error while fetching leaderboard: {resp}")
             continue
         try:
             x = findLeaderboard(resp)
@@ -91,6 +94,8 @@ async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
 
         if i == "shortest":
             for u, d in j.items():
+                if not d:
+                    continue
                 shortestUsers[u] = d["urls"]
                 count = d["count"]
                 leaderboardData[i][u] = count

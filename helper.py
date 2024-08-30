@@ -1,12 +1,14 @@
-from bs4 import BeautifulSoup
 import httpx
+from bs4 import BeautifulSoup
 
 import json
 import asyncio
 import logging
 
-from logger import logger
+from logger import getLogger
 from customTypes import Function
+
+logger = getLogger(__name__)
 
 
 def extractProblemsFromResponse(r: httpx.Response):
@@ -75,7 +77,7 @@ async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClien
     """
 
     totalLen = len(urls)
-    diff = 500
+    diff = 500 # TODO: Remove this line
     logger.info(f"Making bulk requests to {totalLen} urls")
 
 

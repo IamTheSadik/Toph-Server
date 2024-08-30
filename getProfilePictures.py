@@ -1,7 +1,7 @@
-from bs4 import BeautifulSoup
-import httpx
 import os
 import json
+import httpx
+from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
 
 if not os.path.exists("Data/profilePictures"):
@@ -28,7 +28,7 @@ def textsize(text, font):
 
 
 for i, user in enumerate(sorted(usernames), 1):
-    print(f"Getting @{user}      |       {i}/{len(usernames)}")
+    print(f"Getting @{user}      |       {i}/{len(usernames)}", end="\r")
 
     url = f"https://toph.co/u/{user}"
     r = ses.get(url)
@@ -56,5 +56,7 @@ for i, user in enumerate(sorted(usernames), 1):
 
     with open(f"Data/profilePictures/{user}.jpg", "wb") as f:
         f.write(ses.get(img).content)
+
+print()
 
 import compressProfilePictures

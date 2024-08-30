@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "limits": {
+    "cpu": "1s",
+    "memory": "512MB",
+    "source": "150kB"
+  },
+  "solutionRatio": "91%",
+  "submissions": {
+    "earliest": "Mutasim",
+    "fastest": "Mutasim",
+    "lightest": "CCS_RUSHIKON",
+    "shortest": "kimiyuki"
+  }
+}
