@@ -1,12 +1,15 @@
-from bs4 import BeautifulSoup
 import httpx
+from bs4 import BeautifulSoup
 
 import json
 import asyncio
 import logging
 
-from logger import logger
+from logger import getLogger
 from customTypes import Function
+
+
+logger = getLogger(__name__)
 
 
 def extractProblemsFromResponse(r: httpx.Response):
@@ -51,7 +54,7 @@ def findLeaderboard(r: httpx.Response):
     except IndexError:
         logger.error(f"Unsolved Problem {r.url}")
         raise ValueError(f"Unsolved Problem {r.url}")
-    
+
     c = [i.span.text for i in b]
     url = str(r.url).split("/")[-1]
 
@@ -61,7 +64,9 @@ def findLeaderboard(r: httpx.Response):
     return c
 
 
-async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClient, diff:int=100):
+async def makeBulkRequests(
+    urls: list[str], req: Function, ses: httpx.AsyncClient, diff: int = 100
+):
     """
     Makes bulk requests to a list of urls
 
@@ -75,9 +80,8 @@ async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClien
     """
 
     totalLen = len(urls)
-    diff = 500
+    diff = 50
     logger.info(f"Making bulk requests to {totalLen} urls")
-
 
     problemResponses = []
     while urls:
@@ -86,10 +90,16 @@ async def makeBulkRequests(urls: list[str], req: Function, ses: httpx.AsyncClien
         if x[0].status_code == 429:
             logger.warning(f"Rate limited")
             exit(1)
-        
+
         problemResponses += x
         urls = urls[diff:]
-        logger.info(f"Fetched {len(problemResponses)}/{totalLen} requests")
+        length = len(problemResponses)
+        logger.info(f"Fetched {length}/{totalLen} requests")
+        if length % 500 == 0:
+            logger.info("Sleeping for 1 minute")
+            for i in range(60):
+                logger.info(f"{60-i} seconds left")
+                await asyncio.sleep(1)
 
     return problemResponses
 

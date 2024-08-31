@@ -1,13 +1,16 @@
 import json
 import time
-from bs4 import BeautifulSoup
 import httpx
 import asyncio
+from bs4 import BeautifulSoup
 
 
-from helper import extractProblemsFromResponse, makeBulkRequests
-from logger import logger
+from logger import getLogger
 from customTypes import Function
+from helper import extractProblemsFromResponse, makeBulkRequests
+
+
+logger = getLogger(__name__)
 
 
 async def getAllProblemUrls(req: Function, ses: httpx.AsyncClient):
@@ -26,7 +29,7 @@ async def getAllProblemUrls(req: Function, ses: httpx.AsyncClient):
 
     rootUrl = "http://toph.co/problems/all"
 
-    responses = await makeBulkRequests([rootUrl + f"?start={i*25}&sort=title" for i in range(1, 77)], req, ses)
+    responses = await makeBulkRequests([rootUrl + f"?start={i*25}&sort=title" for i in range(1, 79)], req, ses)
 
     logger.info(f"Extracting problem urls from response")
     allProblems = []

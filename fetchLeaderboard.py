@@ -2,10 +2,12 @@ import httpx
 
 import json
 
+from logger import getLogger
+from customTypes import Function
 from getProblems import getAllProblemUrls
 from helper import makeBulkRequests, findLeaderboard, dumpData
-from logger import logger
-from customTypes import Function
+
+logger = getLogger(__name__)
 
 
 async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):

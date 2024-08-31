@@ -1,4 +1,8 @@
+import os
 import logging
+
+if not os.path.exists("logs"):
+    os.makedirs("logs")
 
 
 def getLogger(name: str):
@@ -9,7 +13,7 @@ def getLogger(name: str):
         "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     )
 
-    fh = logging.FileHandler(f"{name}.log")
+    fh = logging.FileHandler(f"logs/{name}.log")
     fh.setLevel(logging.INFO)
     fh.setFormatter(formatter)
 
@@ -21,6 +25,3 @@ def getLogger(name: str):
     logger.addHandler(ch)
 
     return logger
-
-
-logger = getLogger("logger")
