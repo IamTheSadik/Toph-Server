@@ -36,6 +36,7 @@ class ResponseObj:
 async def req(url: str, ses: httpx.AsyncClient):
     r = await ses.post(
         "https://nusab19.netlify.app/api/makeReq",
+        # "https://nusab19.pages.dev/api/makeReq",
         json={
             "url": url,
             "method": "GET",
@@ -55,7 +56,7 @@ async def req(url: str, ses: httpx.AsyncClient):
 async def main():
     for _ in range(100):
         r = await req(url, ses)
-        print(r.status_code)
+        print(r.text)
         break
 
 

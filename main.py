@@ -58,8 +58,7 @@ async def req(url: str, ses: httpx.AsyncClient):
     try:
         r = r.json()
     except json.JSONDecodeError:
-        r = r.text
-        print("JSON Decode Error", r)
+        print("JSON Decode Error", r.status_code, r.text)
     status_code = r["response"]["status"]
     text = r["response"]["response"]
     r = ResponseObj(url, text, status_code)
