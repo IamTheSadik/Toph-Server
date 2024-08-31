@@ -95,7 +95,7 @@ async def makeBulkRequests(
         urls = urls[diff:]
         length = len(problemResponses)
         logger.info(f"Fetched {length}/{totalLen} requests")
-        if length % 200 == 0:
+        if length % 300 == 0:
             logger.info("Sleeping for 1 minute")
             for i in range(60):
                 logger.info(f"{60-i} seconds left")
