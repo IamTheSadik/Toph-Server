@@ -28,7 +28,7 @@ async def getAllProblemUrls(req: Function, ses: httpx.AsyncClient):
 
     rootUrl = "http://toph.co/problems/all"
 
-    responses = await makeBulkRequests([rootUrl + f"?start={i*25}&sort=title" for i in range(1, 78)], req, ses)
+    responses = await makeBulkRequests([rootUrl + f"?start={i*25}&sort=title" for i in range(1, 79)], req, ses)
 
     logger.info(f"Extracting problem urls from response")
     allProblems = []

@@ -8,8 +8,6 @@ import logging
 from logger import getLogger
 from customTypes import Function
 
-logger = getLogger(__name__)
-
 
 def extractProblemsFromResponse(r: httpx.Response):
     """
@@ -79,7 +77,7 @@ async def makeBulkRequests(
     """
 
     totalLen = len(urls)
-    diff = 500  # TODO: Remove this line
+    diff = 500
     logger.info(f"Making bulk requests to {totalLen} urls")
 
     problemResponses = []
@@ -92,7 +90,13 @@ async def makeBulkRequests(
 
         problemResponses += x
         urls = urls[diff:]
-        logger.info(f"Fetched {len(problemResponses)}/{totalLen} requests")
+        length = len(problemResponses)
+        logger.info(f"Fetched {length}/{totalLen} requests")
+        if length % 200 == 0:
+            logger.info("Sleeping for 1 minute")
+            for i in range(60):
+                logger.info(f"{60-i} seconds left")
+                await asyncio.sleep(1)
 
     return problemResponses
 
