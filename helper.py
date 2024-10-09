@@ -3,11 +3,12 @@ from bs4 import BeautifulSoup
 
 import json
 import asyncio
-import logging
 
 from logger import getLogger
 from customTypes import Function
 
+
+logger = getLogger(__name__)
 
 def extractProblemsFromResponse(r: httpx.Response):
     """
