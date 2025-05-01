@@ -65,14 +65,19 @@ async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
 
     leaderboardData = final.copy()
     final.clear()
-    imposter = leaderboardData["shortest"].get("anonyo.akand")
+    extras = ["anonyo.akand", "Safin01"]
+    extrasData = {i:leaderboardData["shortest"].get(i) for i in extras}
+    # imposter = leaderboardData["shortest"].get("anonyo.akand")
     # Sort the leaderboard
     n = 19  # Top 19
     for k, v in leaderboardData.items():
         sortedList = sorted(v.items(), key=lambda x: -x[1]["count"])
         leaderboardData[k] = dict(sortedList[:n])
 
-    leaderboardData["shortest"]["anonyo.akand"] = imposter
+    # leaderboardData["shortest"]["anonyo.akand"] = imposter
+    for user, value in extrasData.items():
+        leaderboardData["shortest"][user] = value
+
 
     fastestUsers = {}
     lightestUsers = {}
