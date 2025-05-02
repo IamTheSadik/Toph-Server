@@ -13,7 +13,7 @@ ses = httpx.Client(timeout=30, follow_redirects=1)
 with open("Data/leaderboard.json", "rb") as f:
     leaderboard = json.load(f)
 
-usernames = set()
+usernames = {"Safin01"}
 
 for x, y in leaderboard.items():
     for z in y:
