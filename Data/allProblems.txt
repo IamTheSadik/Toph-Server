@@ -34,6 +34,7 @@ http://toph.co/p/alphabet-animals
 http://toph.co/p/alphabets-puzzle
 http://toph.co/p/alter
 http://toph.co/p/alternative-subsequence-the-extension
+http://toph.co/p/ambani-and-his-chocolates
 http://toph.co/p/amicable-numbers
 http://toph.co/p/a-moment-of-happiness
 http://toph.co/p/amusement-park
@@ -125,6 +126,8 @@ http://toph.co/p/bad-xor-2-hard
 http://toph.co/p/bakana
 http://toph.co/p/balanced-relief
 http://toph.co/p/balanced-tag
+http://toph.co/p/jumping-challenge
+http://toph.co/p/bandor-is-hungry
 http://toph.co/p/bangladesh-s-got-talent
 http://toph.co/p/bank-robbery
 http://toph.co/p/bapg
@@ -186,6 +189,7 @@ http://toph.co/p/bits-apart
 http://toph.co/p/blackhole-and-food
 http://toph.co/p/black-or-white
 http://toph.co/p/blackpink-in-your-area
+http://toph.co/p/d-black-white-cows
 http://toph.co/p/kombol
 http://toph.co/p/bloodlust
 http://toph.co/p/bloom
@@ -202,6 +206,7 @@ http://toph.co/p/boom-bot
 http://toph.co/p/bored
 http://toph.co/p/bored-in-box
 http://toph.co/p/boss-kauke-gune-na
+http://toph.co/p/bounty-hunters
 http://toph.co/p/bouquet-for-my-valentine
 http://toph.co/p/bowler-of-the-match
 http://toph.co/p/boys-in-the-assembly
@@ -384,6 +389,7 @@ http://toph.co/p/count-the-mines
 http://toph.co/p/count-the-odds
 http://toph.co/p/cover-the-points
 http://toph.co/p/covid-19-outbreak
+http://toph.co/p/cow-racing-festival
 http://toph.co/p/cracking-the-code
 http://toph.co/p/crash-course
 http://toph.co/p/crayons
@@ -410,9 +416,11 @@ http://toph.co/p/data-structure
 http://toph.co/p/datta-s-dilemma
 http://toph.co/p/day-month-year
 http://toph.co/p/deadpool-gonna-make-math-fun
+http://toph.co/p/death-over-madness
 http://toph.co/p/debugging
 http://toph.co/p/decent-arrays
 http://toph.co/p/decimation-operation
+http://toph.co/p/de-dour
 http://toph.co/p/defeat-in-final-battle
 http://toph.co/p/delete-the-array
 http://toph.co/p/demonic-subset
@@ -421,6 +429,7 @@ http://toph.co/p/dengue-affected-areas
 http://toph.co/p/description-is-pathetic
 http://toph.co/p/designing-a-data-structure
 http://toph.co/p/device-id
+http://toph.co/p/devil-fruit-hunt
 http://toph.co/p/diagonal-sum
 http://toph.co/p/diagonal-traversal
 http://toph.co/p/diary-of-tom-riddle
@@ -582,6 +591,7 @@ http://toph.co/p/find-prime
 http://toph.co/p/find-score
 http://toph.co/p/find-the-ceos
 http://toph.co/p/find-the-circle
+http://toph.co/p/find-the-combination
 http://toph.co/p/find-the-good-sequence
 http://toph.co/p/find-the-hidden-sequence
 http://toph.co/p/find-the-number-of-pearls
@@ -594,6 +604,7 @@ http://toph.co/p/first-snow
 http://toph.co/p/fitness-freak
 http://toph.co/p/five-brothers-kingdom
 http://toph.co/p/fivefold-removals
+http://toph.co/p/fizz-s-generosity-and-the-magical-array
 http://toph.co/p/flash-in-trouble
 http://toph.co/p/flight-plan-evaluation
 http://toph.co/p/floor-no-20
@@ -601,6 +612,7 @@ http://toph.co/p/flower-garden
 http://toph.co/p/flow-finder
 http://toph.co/p/flow-on-tree
 http://toph.co/p/flyover-in-twinland
+http://toph.co/p/follow-the-beats
 http://toph.co/p/football-and-icpc
 http://toph.co/p/forgotten-pin-code
 http://toph.co/p/for-loop-ftw
@@ -618,6 +630,7 @@ http://toph.co/p/fuel-finance
 http://toph.co/p/full-pyramid
 http://toph.co/p/functions-are-beautiful
 http://toph.co/p/functions-of-the-hells-kitchen
+http://toph.co/p/fundygram
 http://toph.co/p/fun-game
 http://toph.co/p/funmondi-contest
 http://toph.co/p/fun-theory
@@ -646,6 +659,7 @@ http://toph.co/p/game-show
 http://toph.co/p/tree
 http://toph.co/p/gathering
 http://toph.co/p/gauss---the-great-mathematician
+http://toph.co/p/lis-and-gcd
 http://toph.co/p/gcd-and-lcm
 http://toph.co/p/gcd-and-nod
 http://toph.co/p/gcd-and-sum
@@ -690,6 +704,7 @@ http://toph.co/p/groby
 http://toph.co/p/groot-s-mission
 http://toph.co/p/group-of-extraordinary-people-of-zukia
 http://toph.co/p/guessing-camels
+http://toph.co/p/guessing-game
 http://toph.co/p/guilty-harun
 http://toph.co/p/gujob
 http://toph.co/p/gutibaji-on-chessboard
@@ -981,6 +996,7 @@ http://toph.co/p/lucky-shirt
 http://toph.co/p/lucky-stone-game
 http://toph.co/p/lucky-string
 http://toph.co/p/lu-contestants
+http://toph.co/p/luffy-and-the-one-banana
 http://toph.co/p/i-will-become-the-pirate-king
 http://toph.co/p/lui-and-dengue
 http://toph.co/p/lulu-land-and-friends
@@ -1025,6 +1041,7 @@ http://toph.co/p/match-the-range
 http://toph.co/p/match-the-substring
 http://toph.co/p/math-and-watermelons
 http://toph.co/p/mathemagic
+http://toph.co/p/matheww
 http://toph.co/p/mathison-and-the-palindromic-editor
 http://toph.co/p/matrix-construction
 http://toph.co/p/matrix-resurrection
@@ -1040,6 +1057,7 @@ http://toph.co/p/maximum-multiplication
 http://toph.co/p/maximum-sum
 http://toph.co/p/maximum-sum-segment
 http://toph.co/p/maxxor
+http://toph.co/p/mayer-dua
 http://toph.co/p/maze-ball-game
 http://toph.co/p/maze-runner
 http://toph.co/p/m-beautiful-numbers
@@ -1098,6 +1116,7 @@ http://toph.co/p/monk-in-the-jungle
 http://toph.co/p/monomono
 http://toph.co/p/montu-mia-and-the-pillar-of-nurjahan
 http://toph.co/p/montu-miyar-ovijan
+http://toph.co/p/moo-mystery
 http://toph.co/p/morona-virus-arrived
 http://toph.co/p/most-difficult-problem-ever
 http://toph.co/p/most-likely-and
@@ -1468,6 +1487,7 @@ http://toph.co/p/set-the-meeting
 http://toph.co/p/set-union
 http://toph.co/p/seven-kingdoms
 http://toph.co/p/sgt-laugh
+http://toph.co/p/sha75
 http://toph.co/p/shadow-business
 http://toph.co/p/shake-it
 http://toph.co/p/shamsu-vai-angrybird
@@ -1569,6 +1589,7 @@ http://toph.co/p/string-factory
 http://toph.co/p/string-game
 http://toph.co/p/string-in-a-grid-2
 http://toph.co/p/infinite-string
+http://toph.co/p/stringofaaa
 http://toph.co/p/string-play
 http://toph.co/p/string-sorting
 http://toph.co/p/strong-passwords
@@ -1704,6 +1725,7 @@ http://toph.co/p/this-is-too-hard
 http://toph.co/p/thor-vs-superman-vs-goku
 http://toph.co/p/throught-game
 http://toph.co/p/three-letter-words
+http://toph.co/p/throttled
 http://toph.co/p/ticket-counter
 http://toph.co/p/tic-toc-toe
 http://toph.co/p/tidy-bits
@@ -1753,6 +1775,8 @@ http://toph.co/p/uap-programming-contest-club-upcc
 http://toph.co/p/ulta-masud
 http://toph.co/p/unbelievable-array
 http://toph.co/p/uncle-m
+http://toph.co/p/uncover-the-treasure
+http://toph.co/p/underdog-to-favorite
 http://toph.co/p/undo-history
 http://toph.co/p/unfair-contest
 http://toph.co/p/unfair-robot-race
@@ -1798,7 +1822,9 @@ http://toph.co/p/weird-cake
 http://toph.co/p/weird-graph
 http://toph.co/p/weird-subtraction
 http://toph.co/p/weird-sum
+http://toph.co/p/welcome
 http://toph.co/p/welcome-to-criterion-rounds
+http://toph.co/p/welcome-to-fec
 http://toph.co/p/what-did-it-cost
 http://toph.co/p/what-is-the-time
 http://toph.co/p/what-s-your-id
@@ -1828,6 +1854,7 @@ http://toph.co/p/wizard-duel
 http://toph.co/p/word-blitz
 http://toph.co/p/word-count
 http://toph.co/p/world-champion
+http://toph.co/p/player-performances
 http://toph.co/p/world-war-in-jupiter
 http://toph.co/p/xiao-metry
 http://toph.co/p/xorand-coupling
