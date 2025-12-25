@@ -65,7 +65,7 @@ async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
 
     leaderboardData = final.copy()
     final.clear()
-    extras = ["anonyo.akand", "Safin01"]
+    extras = ["Safin01", "anonyo.akand"]
     extrasData = {i:leaderboardData["shortest"].get(i) for i in extras}
     # imposter = leaderboardData["shortest"].get("anonyo.akand")
     # Sort the leaderboard
@@ -114,3 +114,4 @@ async def fetchLeaderboard(req: Function, ses: httpx.AsyncClient):
     dumpData(shortestUsers, "Data/users/shortest.json")
 
     logger.info("Dumped leaderboard data")
+
